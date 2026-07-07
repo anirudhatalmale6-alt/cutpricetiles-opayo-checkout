@@ -1,0 +1,23 @@
+/**
+ * CutPriceTiles_OpayoCheckout
+ * Hides the payment-method selection UI at checkout so the customer sees only
+ * the order summary + billing address + Place Order button. With Opayo (SagePay
+ * Form) as the only active method it is auto-selected, and Place Order hands off
+ * straight to the Opayo hosted page (gateway default behaviour).
+ */
+
+/* Hide the "Payment Method" step heading */
+.checkout-payment-method > .step-title,
+.checkout-payment-method .payment-group > .step-title {
+    display: none !important;
+}
+
+/* Hide the payment method radio + title row (Opayo logo + label) */
+.checkout-payment-method .payment-method-title.field.choice {
+    display: none !important;
+}
+
+/* Always reveal the (single) method content: billing address, note, T&C, Place Order */
+.checkout-payment-method .items.payment-methods .payment-method-content {
+    display: block !important;
+}
